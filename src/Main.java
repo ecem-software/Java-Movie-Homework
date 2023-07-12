@@ -7,7 +7,6 @@ import java.util.Scanner;
 import java.util.HashSet;
 public class Main {
     public static void main(String[] args) {
-
         PlatformList platList = new PlatformList();
         Scanner scan = new Scanner(System.in);
         scan.useDelimiter("\\n");
@@ -18,6 +17,7 @@ public class Main {
             int userType = scan.nextInt();
 
             if (userType == 1) {
+
                 ArrayList<String> platformNames = platList.getPlatformNames();
                 String out = "";
                 int index = 1;
@@ -27,7 +27,15 @@ public class Main {
                 }
                 System.out.print("Choose the platform : "+out);
                 int platIndex = scan.nextInt();
-                String platName = platformNames.get(platIndex-1);
+                String platName = "";
+
+                if (platIndex >= 1 && platIndex <= platformNames.size()) {
+                    platName = platformNames.get(platIndex - 1);
+                } else {
+                    System.out.println("Invalid platform selection. Please choose a valid platform.");
+                    System.out.println("Please enter a value from the admin section.");
+                    continue;
+                }
 
                 ArrayList<String> categoryNames = platList.getCategoryNamesByPlatform(platName);
                 String out2 = "";
@@ -62,7 +70,7 @@ public class Main {
                     switch(adminChoice) {
                         case 1:
                             System.out.print("Please enter platform name: ");
-                            String platformName = scan.next();
+                            String platformName = scan.next(); // Yeni bir platform oluşturmak için platform adını kullanıcıdan alır.
                             platList.createPlatform(platformName);
                             break;
                         case 2:

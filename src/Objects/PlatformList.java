@@ -3,8 +3,9 @@ package Objects;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
 public class PlatformList {
+
+
     private HashMap<String,Platform> platformMap;
 
     public PlatformList(){

@@ -12,10 +12,10 @@ public class Platform {
 
     public Platform(String name){
         this.name=name;
-        this.categoryList = new CategoryList();
+        this.categoryList = new CategoryList(); //Platforma ait kategorileri içeren bir CategoryList özelliğidir.
     }
 
-    public void createCategory(String categoryName, String detail)
+    public void createCategory(String categoryName, String detail) // Belirli bir kategori adı ve detay bilgisi alarak, platforma ait kategorilerin oluşturulmasını categoryList üzerinden gerçekleştirir.
     {
         this.categoryList.createCategory(categoryName, detail);
     }
@@ -27,7 +27,7 @@ public class Platform {
 
     public String getName() {
         return name;
-    }
+    } //Platformun adını döndürür.
 
     public void setName(String name) {
         this.name = name;
