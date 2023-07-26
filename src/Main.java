@@ -15,7 +15,8 @@ public class Main {
         while(!quit){
             System.out.print("Please choose the user type: \n1- Client \n2- Admin\n0- Quit\n");
             int userType = scan.nextInt();
-
+            
+            // Client Section
             if (userType == 1) {
 
                 ArrayList<String> platformNames = platList.getPlatformNames();
@@ -36,7 +37,9 @@ public class Main {
                     System.out.println("Please enter a value from the admin section.");
                     continue;
                 }
-
+                
+                // Display available categories for the selected platform
+                
                 ArrayList<String> categoryNames = platList.getCategoryNamesByPlatform(platName);
                 String out2 = "";
                 int index2 = 1;
