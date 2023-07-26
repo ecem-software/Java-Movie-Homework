@@ -17,6 +17,7 @@ public class Main {
             int userType = scan.nextInt();
             
             // Client Section
+            
             if (userType == 1) {
 
                 ArrayList<String> platformNames = platList.getPlatformNames();
